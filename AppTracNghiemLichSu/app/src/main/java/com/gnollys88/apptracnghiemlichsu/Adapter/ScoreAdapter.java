@@ -1,4 +1,4 @@
-package com.gnollys88.apptracnghiemlichsu.score;
+package com.gnollys88.apptracnghiemlichsu.Adapter;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.gnollys88.apptracnghiemlichsu.R;
-import com.gnollys88.apptracnghiemlichsu.score.ScoreAdapter;
-import com.gnollys88.apptracnghiemlichsu.score.ScoreController;
+import com.gnollys88.apptracnghiemlichsu.Adapter.ScoreAdapter;
+import com.gnollys88.apptracnghiemlichsu.Controler.ScoreController;
 
 public class BangVangActivity extends AppCompatActivity {
     ListView lvScore;
@@ -17,12 +17,16 @@ public class BangVangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bangvangactivity);
-
+        init();
         scoreController=new ScoreController(BangVangActivity.this);
-        lvScore=findViewById(R.id.lvScore);
+
         Cursor cursor=scoreController.getScore();
         scoreAdapter=new ScoreAdapter(BangVangActivity.this,cursor,true);
         lvScore.setAdapter(scoreAdapter);
+    }
+
+    private void init() {
+        lvScore=findViewById(R.id.lvScore);
     }
 
 }

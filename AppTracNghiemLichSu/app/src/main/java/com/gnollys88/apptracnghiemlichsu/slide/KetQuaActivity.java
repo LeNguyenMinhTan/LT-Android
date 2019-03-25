@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.gnollys88.apptracnghiemlichsu.R;
 import com.gnollys88.apptracnghiemlichsu.question.Question;
-import com.gnollys88.apptracnghiemlichsu.score.ScoreController;
+import com.gnollys88.apptracnghiemlichsu.Controler.ScoreController;
 
 import java.util.ArrayList;
 
@@ -29,11 +29,17 @@ public class KetQuaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ket_qua);
+        init();
+        click();
         scoreController= new ScoreController(KetQuaActivity.this);
         Intent intent= getIntent();
         arr_bandau= (ArrayList<Question>) intent.getExtras().getSerializable("arr_Ques");
-        btnluu=findViewById(R.id.btnluu);
-        btnthoat=findViewById(R.id.btnthoatluu);
+        checkketqua();
+        tvdung.setText(dung+" câu");
+        tvsai.setText((20-dung)+ " câu");
+        tvtong.setText(dung*10+"");
+    }
+    private void click() {
         btnthoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +63,6 @@ public class KetQuaActivity extends AppCompatActivity {
                 builder.show();
             }
         });
-
-
         btnluu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,20 +98,13 @@ public class KetQuaActivity extends AppCompatActivity {
                 b.show();
             }
         });
-
-
-        checkketqua();
-
-
-
+    }
+    private void init() {
         tvdung=findViewById(R.id.tvdung);
         tvsai=findViewById(R.id.tvsai);
-
+        btnluu=findViewById(R.id.btnluu);
         tvtong=findViewById(R.id.tvtong);
-        tvdung.setText(dung+" câu");
-        tvsai.setText((20-dung)+ " câu");
-
-        tvtong.setText(dung*10+"");
+        btnthoat=findViewById(R.id.btnthoatluu);
     }
     public void checkketqua(){
         for(int i=0;i<arr_bandau.size();i++){

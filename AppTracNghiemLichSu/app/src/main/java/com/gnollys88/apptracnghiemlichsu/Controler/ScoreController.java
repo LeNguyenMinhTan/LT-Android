@@ -1,4 +1,4 @@
-package com.gnollys88.apptracnghiemlichsu.score;
+package com.gnollys88.apptracnghiemlichsu.Controler;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -23,8 +23,6 @@ public class ScoreController {
         values.put("name", name);
         values.put("score", score);
         db.insert("xephang", null, values);
-
-
         db.close();
     }
 

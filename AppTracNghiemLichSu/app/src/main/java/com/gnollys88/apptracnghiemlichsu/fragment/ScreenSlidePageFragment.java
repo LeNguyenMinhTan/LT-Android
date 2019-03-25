@@ -46,6 +46,7 @@ public class ScreenSlidePageFragment extends Fragment {
         // Inflate the layout for this fragment
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.fragment_screen_slide_page, container, false);
+
         tvNum=(TextView)rootView.findViewById(R.id.tvNum);
         tvQuestion=(TextView)rootView.findViewById(R.id.tvQuestion);
         radA=(RadioButton)rootView.findViewById(R.id.radA);
@@ -92,6 +93,7 @@ public class ScreenSlidePageFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
          tvNum.setText("câu"+ (mPageNumber+1));
          tvQuestion.setText(arr_Ques.get(mPageNumber).getQuestions());
          radA.setText(getItem(mPageNumber).getAns_a());
@@ -116,6 +118,8 @@ public class ScreenSlidePageFragment extends Fragment {
             }
         });
     }
+
+
     public Question getItem(int position){
         return arr_Ques.get(position);
     }
