@@ -14,22 +14,16 @@ public class GioiThieuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gioi_thieu);
-        init();
-        click();
+        Button btngioithieu = findViewById(R.id.btngioithieuthoat);
 
-    }
-
-    private void click() {
         btngioithieu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                Toast.makeText(GioiThieuActivity.this, "thượng lộ bình tĩnh , đi không tiễn nhé =]]!", Toast.LENGTH_SHORT).show();
+
+               // Toast.makeText(GioiThieuActivity.this, "thượng lộ bình tĩnh , đi không tiễn nhé =]]!", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
 
-    private void init() {
-        Button btngioithieu = findViewById(R.id.btngioithieuthoat);
-    }
 }
