@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gnollys88.apptracnghiemlichsu.MainActivity;
 import com.gnollys88.apptracnghiemlichsu.R;
 import com.gnollys88.apptracnghiemlichsu.question.Question;
 import com.gnollys88.apptracnghiemlichsu.Controler.ScoreController;
@@ -56,6 +57,8 @@ public class KetQuaActivity extends AppCompatActivity {
                 builder.setNegativeButton("Có", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(KetQuaActivity.this, MainActivity.class);
+                        startActivity(intent);
                         finish();
                         Toast.makeText(KetQuaActivity.this, "Thoát mà không lưu, m ngượng ngùng cm j à ??", Toast.LENGTH_SHORT).show();
                     }
